@@ -19,16 +19,10 @@ public class ContatosControle {
 		LISTA_CONTATOS.add(new Contato("5", "Alexandre", "+55 11 955555555"));
 	}
 	
-	
-	
-	
-	
-	
 	@GetMapping("/")
 	public String paginaInicial() {
 		return "index";
 	}
-
 
 @GetMapping("/contatos")
 public ModelAndView listar() {
@@ -37,5 +31,17 @@ public ModelAndView listar() {
 	
 	return mAD;
 	}
+
+@GetMapping ("/contatos/novo")
+	public ModelAndView novo() {
+	ModelAndView mAD = new ModelAndView("formulario");
+	mAD.addObject("contato", new Contato());
+	
+	return mAD;
+	}
+
+
+
+
 
 }
